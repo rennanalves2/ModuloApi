@@ -58,7 +58,7 @@ namespace ModuloApi.Controllers
 
             _context.Contatos.Add(contato);
             _context.SaveChanges();
-            return NoContent();
+            return CreatedAtAction(nameof(GetById), new { id = contato.Id }, contato);
         }
 
         [HttpPut("{id}")]
